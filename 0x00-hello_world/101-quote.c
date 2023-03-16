@@ -2,10 +2,10 @@
 /**
  * main - Entry point
  * Return: Always 1 (Success)
- * This program prints a string of text to stderr
+ * This program prints som tests to stderr
  */
 int main(void)
 {
-	fprintf(stderr, "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n");
+	fprintf(stderr, "and that piece of art is useful\" -Dora Korpar, 2015-10-19");
 	return (1);
 }
