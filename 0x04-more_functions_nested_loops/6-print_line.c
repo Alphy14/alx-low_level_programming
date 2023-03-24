@@ -14,7 +14,7 @@ void print_line(int n)
 	}
 	else
 	{
-		a = 1;
+		a = 0;
 		while (a <= n)
 		{
 			_putchar(45);
