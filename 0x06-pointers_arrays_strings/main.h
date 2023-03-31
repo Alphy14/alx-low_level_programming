@@ -10,5 +10,6 @@ char *string_toupper(char *);
 char *leet(char *);
 int _putchar(char c);
 char *cap_string(char *);
+char *rot13(char *);
 
 #endif /* MAIN_H */
