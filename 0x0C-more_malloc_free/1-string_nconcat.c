@@ -22,7 +22,9 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		len1 = 0;
 	if (s2 == NULL)
 		len2 = 0;
-	s3 = malloc(sizeof(char) * (len1 + len2 + 1));
+	if (n >= len2)
+		n = len2;
+	s3 = malloc(sizeof(char) * (len1 + n + 1));
 	if (s3 == NULL)
 		return (NULL);
 	if (s1)
@@ -32,21 +34,8 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	}
 	if (s2)
 	{
-		if (n < len2)
-		{
-			for (index2 = 0; index2 < n; index2++)
-			{
-				s3[index1++] = s2[index2];
-			}
-		}
-		else if (len2 >= n)
-		{
-			len2 = n;
-			for (index2 = 0; index2 < len2; index2++)
-			{
-				s3[index1++] = s2[index2];
-			}
-		}
+		for (index2 = 0; index2 < n; index2++)
+			s3[index1++] = s2[index2];
 	}
 	s3[index1] = '\0';
 	return (s3);
