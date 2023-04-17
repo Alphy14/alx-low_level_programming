@@ -8,9 +8,9 @@
  */
 int _strlen(char *s)
 {
-	int len = 0;
+	int len = 0, index = 0;
 
-	while (*s++)
+	while (s[index++] != '\0')
 		len++;
 	return (len);
 }
@@ -25,7 +25,7 @@ char *_strcpy(char *dest, char *src)
 {
 	int index;
 
-	for (index = 0; src[index]; index++)
+	for (index = 0; src[index] != '\0'; index++)
 		dest[index] = src[index];
 	dest[index] = '\0';
 	return (dest);
@@ -53,8 +53,8 @@ dog_t *new_dog(char *name, float age, char *owner)
 	ptr1->owner = malloc(sizeof(char) * (_strlen(owner) + 1));
 	if (ptr1->owner == NULL)
 	{
-		free(ptr1->owner);
 		free(ptr1);
+		free(ptr1->name);
 		return (NULL);
 	}
 	ptr1->name = _strcpy(ptr1->name, name);
