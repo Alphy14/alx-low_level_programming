@@ -2,7 +2,7 @@
 #include <stdarg.h>
 #include <stdio.h>
 /**
- * dum_them_all - returns the sum
+ * sum_them_all - returns the sum
  * of all its parameters.
  * @n: Then count of the params
  * Return: The resulting sum and 0 if n == 0.
