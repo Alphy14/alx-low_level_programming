@@ -49,6 +49,9 @@ size_t print_listint_safe(const listint_t *head)
 {
 	size_t num_of_nodes, i;
 
+	if (head == NULL)
+		exit(98);
+
 	num_of_nodes = looped_listint_len(head);
 	if (num_of_nodes == 0)
 	{
@@ -66,7 +69,6 @@ size_t print_listint_safe(const listint_t *head)
 			head = head->next;
 		}
 		printf("-> [%p] %d\n", (void *)head, head->n);
-		exit(98);
 	}
 	return (num_of_nodes);
 }
